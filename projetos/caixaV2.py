@@ -5,14 +5,12 @@ programa_ativo = True
 precoTotal = 0
 carrinho = {}
 
-# finalização do código e abilitação da regra de negócio
 def visualizar(dic):
   global precoTotal
   for produto, dados in dic.items():
     print(f'Produto: {produto} | Preço: {dados['Preco']} | Quantidade: {dados['Quantidade']}')
     precoTotal += dados['Preco']*dados['Quantidade']
-  
-  # regra de negócio
+    
   if precoTotal >= 100:
     precoTotal *= 0.90 # 10% desconto
   elif precoTotal > 50:
@@ -20,7 +18,6 @@ def visualizar(dic):
   else:
     pass
 
-# mecanismo de pequisa
 def pesquisa(item_pesquisado,dic):
   parte = item_pesquisado.lower()
   encontrados = []
@@ -36,7 +33,6 @@ def pesquisa(item_pesquisado,dic):
   else:
     print(f'Nenhum produto com o nome: {item_pesquisado}, foi encontrado!')
 
-# mecanismo para manipulação/alterações do dicionário
 def ediacao(item_editar,dic):
   pass
 
@@ -78,5 +74,6 @@ while iniciando:
       else:
         print('defina um item!!!')
         continue
+
   else:
     break
